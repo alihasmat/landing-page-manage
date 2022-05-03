@@ -1,0 +1,57 @@
+@use "../util/" as *;
+
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(132);
+
+  @include breakpoint-down(small) {
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: rem(106);
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: rem(435);
+
+    @include breakpoint-down(small) {
+      order: 2;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: rem(36);
+
+      @include breakpoint-down(small) {
+        font-size: rem(40);
+        margin-bottom: rem(17);
+      }
+    }
+
+    p {
+      width: rem(347);
+      margin-bottom: rem(43);
+      margin-top: 0;
+
+      @include breakpoint-down(small) {
+        margin-bottom: rem(34);
+      }
+    }
+  }
+
+  img {
+    width: rem(560);
+    // height: rem(505);
+
+    @include breakpoint-down(small) {
+      order: 1;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,181 @@
+@use "../util" as *;
+
+.header {
+  margin-top: rem(56);
+  margin-bottom: rem(109);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint-down(small) {
+    margin-top: rem(45);
+    margin-bottom: rem(48);
+  }
+
+  &__nav {
+    &__hamburger {
+      display: none;
+
+      @include breakpoint-down(medium) {
+        display: block;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        width: rem(25);
+        height: rem(18);
+        position: relative;
+        transition: all 0.25s;
+      }
+
+      &--top,
+      &--middle,
+      &--bottom {
+        @include breakpoint-down(medium) {
+          display: block;
+          width: rem(25);
+          height: rem(4);
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: var(--primary-dblue);
+          transform: rotate(0);
+          transition: all 0.5s;
+        }
+      }
+
+      &--middle {
+        @include breakpoint-down(medium) {
+          transform: translateY(7px);
+        }
+      }
+
+      &--bottom {
+        @include breakpoint-down(medium) {
+          transform: translateY(14px);
+        }
+      }
+    }
+
+    &__ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      @include breakpoint-down(medium) {
+        display: none;
+      }
+
+      &--li {
+        margin-right: rem(34);
+
+        a {
+          color: var(--primary-dblue);
+        }
+      }
+      &--li:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__mmenu {
+      @include breakpoint-down(medium) {
+        position: absolute;
+        top: rem(102);
+        left: 0;
+        right: 0;
+        width: 91%;
+        margin: 0 auto;
+        background: var(--background);
+        border-radius: 5px;
+        box-shadow: -2px 7px 18px -3px rgba(0, 0, 0, 0.31);
+        -webkit-box-shadow: -2px 7px 18px -3px rgba(0, 0, 0, 0.31);
+        -moz-box-shadow: -2px 7px 18px -3px rgba(0, 0, 0, 0.31);
+      }
+
+      &__mul {
+        @include breakpoint-down(medium) {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: rem(47) 0;
+        }
+
+        &--mli {
+          @include breakpoint-down(medium) {
+            margin-bottom: rem(35);
+          }
+
+          a {
+            @include breakpoint-down(medium) {
+              color: var(--primary-dblue);
+              font-weight: 700;
+            }
+          }
+        }
+        @include breakpoint-down(medium) {
+          &--mli:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__ctabtn {
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+  }
+}
+
+.container-image::before {
+  @include breakpoint(medium) {
+    content: "";
+    background-image: url(/images/bg-tablet-pattern.svg);
+    width: 48%;
+    position: absolute;
+    background-repeat: no-repeat;
+    left: rem(750);
+    top: rem(-150);
+    bottom: 0;
+    z-index: -1;
+  }
+
+  @include breakpoint-down(small) {
+    content: "";
+    background-image: url(/images/bg-tablet-pattern.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    top: rem(-114);
+    bottom: 0;
+    left: rem(65);
+    right: 0;
+    z-index: -1;
+    background-size: 158%;
+  }
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .header__nav__hamburger--top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .header__nav__hamburger--middle {
+  display: none;
+}
+
+.open .header__nav__hamburger--bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.hidden {
+  display: none;
+}

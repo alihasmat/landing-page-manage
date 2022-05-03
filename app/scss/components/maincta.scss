@@ -1,0 +1,54 @@
+@use "../util/" as *;
+
+.maincta {
+  // height: rem(221);
+  background: var(--primary-bred);
+  position: relative;
+  background-size: cover;
+
+  &__text {
+    padding: rem(70) rem(24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint-down(small) {
+      text-align: center;
+      flex-direction: column;
+      padding: rem(103) rem(37);
+    }
+
+    div {
+      font-size: rem(30);
+      color: var(--background);
+      // width: rem(436);
+
+      @include breakpoint-down(small) {
+        margin-bottom: rem(25);
+        font-size: rem(35);
+      }
+    }
+
+    &--btn {
+      padding: rem(18) rem(32);
+      border-radius: rem(40);
+      background-color: var(--background);
+      color: var(--primary-bred);
+      font-size: rem(12);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+.maincta::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-image: url(/images/bg-simplify-section-desktop.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}

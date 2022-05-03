@@ -1,0 +1,78 @@
+@use "../util/" as *;
+
+.testimonial {
+  margin-bottom: rem(131);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    text-align: center;
+    margin-bottom: rem(72);
+  }
+
+  &__swiper {
+    padding-top: rem(34) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: rem(16);
+    width: 100%;
+    height: 100%;
+
+    &__wrapper {
+      margin-bottom: rem(50);
+
+      &__slide {
+        text-align: center;
+
+        // @include breakpoint-down(large) {
+        //   width: rem(448) !important;
+        // }
+
+        // @include breakpoint-down(medium) {
+        //   width: rem(370) !important;
+        // }
+
+        // @include breakpoint-down(small) {
+        //   width: rem(375) !important;
+        // }
+
+        figure {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: ease 0.4s;
+          background: var(--neutral-vlgrey);
+          padding: 0 rem(47) rem(43);
+          margin: rem(0);
+
+          img {
+            object-fit: cover;
+            width: rem(72);
+            height: rem(72);
+            margin-top: rem(-36);
+            margin-bottom: rem(30);
+          }
+        }
+      }
+    }
+
+    &__btn {
+      margin-bottom: rem(50);
+      margin-top: rem(48);
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  width: rem(12) !important;
+  height: rem(12) !important;
+  background: var(--background) !important;
+  border: 1px solid var(--primary-bred) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary-bred) !important;
+}

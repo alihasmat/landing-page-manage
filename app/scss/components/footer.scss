@@ -1,0 +1,126 @@
+@use "../util/" as *;
+
+.footer {
+  background: var(--neutral-vdblue);
+
+  &__main__content {
+    padding: rem(70) 0;
+
+    @include breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    form {
+      text-align: center;
+      display: flex;
+
+      @include breakpoint(medium) {
+        order: 3;
+        align-self: flex-start;
+      }
+
+      input {
+        padding: rem(17) rem(33) rem(17) rem(25);
+        border-radius: rem(50);
+        outline: none;
+        border: none;
+        margin-right: rem(6);
+        width: 100%;
+      }
+      button {
+        padding: rem(15) rem(28);
+        border-radius: rem(25);
+        border: none;
+        background: var(--primary-bred);
+        color: var(--background);
+        cursor: pointer;
+      }
+    }
+
+    &--links {
+      display: flex;
+      justify-content: space-around;
+      font-size: rem(14);
+      font-weight: 400;
+      padding: rem(60) rem(63);
+
+      @include breakpoint(medium) {
+        order: 2;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      ul {
+        list-style: none;
+        margin-right: rem(100);
+        padding: 0;
+
+        @include breakpoint(medium) {
+          margin-top: 0;
+        }
+
+        li {
+          margin-bottom: rem(24);
+          a {
+            color: var(--background);
+          }
+        }
+        li:last-child {
+          margin-bottom: 0;
+        }
+      }
+      ul:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--images {
+      font-size: rem(14);
+      color: var(--background);
+      text-align: center;
+
+      @include breakpoint(medium) {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &--icons {
+        display: flex;
+        justify-content: space-around;
+
+        @include breakpoint(medium) {
+          order: 2;
+          margin: rem(55) 0;
+        }
+
+        img {
+          width: rem(32);
+          height: rem(32);
+
+          @include breakpoint(medium) {
+            width: rem(20);
+            height: rem(20);
+          }
+        }
+      }
+
+      &--logo {
+        margin: rem(55) 0;
+
+        @include breakpoint(medium) {
+          order: 1;
+          margin: 0;
+        }
+      }
+
+      &--copyright {
+        color: var(--neutral-dgblue);
+        @include breakpoint(medium) {
+          order: 3;
+        }
+      }
+    }
+  }
+}

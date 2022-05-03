@@ -1,0 +1,48 @@
+@use "../util/" as *;
+
+html {
+  box-sizing: border-box;
+  font: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: rem(16);
+  font-family: var(--font-bevietnam);
+  background: var(--background);
+  color: var(--primary-dblue);
+  scroll-behavior: smooth;
+}
+
+p {
+  color: var(--neutral-dgblue);
+  line-height: 1.6;
+}
+
+.ctabtn {
+  padding: rem(18) rem(32);
+  border-radius: rem(40);
+  background-color: var(--primary-bred);
+  color: var(--background);
+  font-size: rem(12);
+  font-weight: 600;
+  box-shadow: 1px 17px 13px -12px rgba(242, 95, 58, 0.76);
+  -webkit-box-shadow: 1px 17px 13px -12px rgba(242, 95, 58, 0.76);
+  -moz-box-shadow: 1px 17px 13px -12px rgba(242, 95, 58, 0.76);
+  cursor: pointer;
+}
+
+.bg-image {
+  position: absolute;
+  top: -20%;
+  left: 53%;
+  z-index: -1;
+}
