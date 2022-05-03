@@ -17,7 +17,7 @@ Users should be able to:
 
 ![](./screenshot.png)
 
-- Live Site URL: [Click Here](https://2725efeb.fm-social-db.pages.dev/)
+- Live Site URL: [Click Here](https://landing-page-manage.pages.dev/)
 
 ### Built with
 
